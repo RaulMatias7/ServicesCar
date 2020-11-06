@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_estacaoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="FuncGroup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" />
+    <Property Name="idGrupo" Type="Int32" />
+    <NavigationProperty Name="Grupos" Relationship="db_estacaoModel.FK__FuncGroup__idGru__30C33EC3" FromRole="FuncGroup" ToRole="Grupos" />
+    <NavigationProperty Name="Funcionarios" Relationship="db_estacaoModel.FK__FuncGroup__idFun__498EEC8D" FromRole="FuncGroup" ToRole="Funcionarios" />
+  </EntityType>
+  <EntityType Name="Grupos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="grupo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="data_criacao" Type="DateTime" Precision="3" />
+    <Property Name="data_modificacao" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="FuncGroup" Relationship="db_estacaoModel.FK__FuncGroup__idGru__30C33EC3" FromRole="Grupos" ToRole="FuncGroup" />
+    <NavigationProperty Name="Atendimento" Relationship="db_estacaoModel.FK__Atendimen__idGru__7073AF84" FromRole="Grupos" ToRole="Atendimento" />
+  </EntityType>
+  <EntityType Name="Servicos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="data_criacao" Type="DateTime" Precision="3" />
+    <Property Name="data_modificacao" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="SubServicos" Relationship="db_estacaoModel.FK__SubServic__idSer__73BA3083" FromRole="Servicos" ToRole="SubServicos" />
+  </EntityType>
+  <EntityContainer Name="db_estacaoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FuncGroup" EntityType="Self.FuncGroup" />
+    <EntitySet Name="Grupos" EntityType="Self.Grupos" />
+    <EntitySet Name="Servicos" EntityType="Self.Servicos" />
+    <EntitySet Name="SubServicos" EntityType="db_estacaoModel.SubServicos" />
+    <AssociationSet Name="FK__SubServic__idSer__73BA3083" Association="db_estacaoModel.FK__SubServic__idSer__73BA3083">
+      <End Role="Servicos" EntitySet="Servicos" />
+      <End Role="SubServicos" EntitySet="SubServicos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FuncGroup__idGru__30C33EC3" Association="db_estacaoModel.FK__FuncGroup__idGru__30C33EC3">
+      <End Role="Grupos" EntitySet="Grupos" />
+      <End Role="FuncGroup" EntitySet="FuncGroup" />
+    </AssociationSet>
+    <EntitySet Name="Funcionarios" EntityType="db_estacaoModel.Funcionarios" />
+    <AssociationSet Name="FK__FuncGroup__idFun__498EEC8D" Association="db_estacaoModel.FK__FuncGroup__idFun__498EEC8D">
+      <End Role="Funcionarios" EntitySet="Funcionarios" />
+      <End Role="FuncGroup" EntitySet="FuncGroup" />
+    </AssociationSet>
+    <EntitySet Name="Sistema" EntityType="db_estacaoModel.Sistema" />
+    <EntitySet Name="Atendimento" EntityType="db_estacaoModel.Atendimento" />
+    <EntitySet Name="Pagamentos" EntityType="db_estacaoModel.Pagamentos" />
+    <AssociationSet Name="FK__Atendimen__idGru__7073AF84" Association="db_estacaoModel.FK__Atendimen__idGru__7073AF84">
+      <End Role="Grupos" EntitySet="Grupos" />
+      <End Role="Atendimento" EntitySet="Atendimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Atendimen__idPag__6F7F8B4B" Association="db_estacaoModel.FK__Atendimen__idPag__6F7F8B4B">
+      <End Role="Pagamentos" EntitySet="Pagamentos" />
+      <End Role="Atendimento" EntitySet="Atendimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Atendimen__idSub__6E8B6712" Association="db_estacaoModel.FK__Atendimen__idSub__6E8B6712">
+      <End Role="SubServicos" EntitySet="SubServicos" />
+      <End Role="Atendimento" EntitySet="Atendimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pagamento__idFun__14B10FFA" Association="db_estacaoModel.FK__Pagamento__idFun__14B10FFA">
+      <End Role="Funcionarios" EntitySet="Funcionarios" />
+      <End Role="Pagamentos" EntitySet="Pagamentos" />
+    </AssociationSet>
+    <EntitySet Name="vwAtendimentos" EntityType="db_estacaoModel.vwAtendimentos" />
+    <FunctionImport Name="spUpdateCaixa" EntitySet="Pagamentos" ReturnType="Collection(db_estacaoModel.Pagamentos)">
+      <Parameter Name="idPagamento" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="Caixa" EntityType="db_estacaoModel.Caixa" />
+    <AssociationSet Name="FK__Caixa__idFuncion__75F77EB0" Association="db_estacaoModel.FK__Caixa__idFuncion__75F77EB0">
+      <End Role="Funcionarios" EntitySet="Funcionarios" />
+      <End Role="Caixa" EntitySet="Caixa" />
+    </AssociationSet>
+    <EntitySet Name="vwCaixa" EntityType="db_estacaoModel.vwCaixa" />
+    <EntitySet Name="Promocoes" EntityType="db_estacaoModel.Promocoes" />
+    <EntitySet Name="Clientes" EntityType="db_estacaoModel.Clientes" />
+    <EntitySet Name="Empresas" EntityType="db_estacaoModel.Empresas" />
+    <EntitySet Name="FaturasEmpresa" EntityType="db_estacaoModel.FaturasEmpresa" />
+    <AssociationSet Name="FK__FaturasEm__idEmp__07E124C1" Association="db_estacaoModel.FK__FaturasEm__idEmp__07E124C1">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="FaturasEmpresa" EntitySet="FaturasEmpresa" />
+    </AssociationSet>
+    <EntitySet Name="vwFacturasEmpresas" EntityType="db_estacaoModel.vwFacturasEmpresas" />
+  </EntityContainer>
+  <EntityType Name="SubServicos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idServico" Type="Int32" Nullable="false" />
+    <Property Name="modelo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="preco" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="data_criacao" Type="DateTime" Precision="3" />
+    <Property Name="data_modificacao" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Servicos" Relationship="db_estacaoModel.FK__SubServic__idSer__73BA3083" FromRole="SubServicos" ToRole="Servicos" />
+    <NavigationProperty Name="Atendimento" Relationship="db_estacaoModel.FK__Atendimen__idSub__6E8B6712" FromRole="SubServicos" ToRole="Atendimento" />
+  </EntityType>
+  <Association Name="FK__SubServic__idSer__73BA3083">
+    <End Type="db_estacaoModel.Servicos" Role="Servicos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="db_estacaoModel.SubServicos" Role="SubServicos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SubServicos">
+        <PropertyRef Name="idServico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FuncGroup__idGru__30C33EC3">
+    <End Type="db_estacaoModel.Grupos" Role="Grupos" Multiplicity="0..1" />
+    <End Type="db_estacaoModel.FuncGroup" Role="FuncGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grupos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="FuncGroup">
+        <PropertyRef Name="idGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Funcionarios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="dataN" Type="DateTime" Precision="0" />
+    <Property Name="sexo" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="senha" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="acesso" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="estado" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="data_criacao" Type="DateTime" Precision="3" />
+    <Property Name="data_modificacao" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="FuncGroup" Relationship="db_estacaoModel.FK__FuncGroup__idFun__498EEC8D" FromRole="Funcionarios" ToRole="FuncGroup" />
+    <NavigationProperty Name="Pagamentos" Relationship="db_estacaoModel.FK__Pagamento__idFun__14B10FFA" FromRole="Funcionarios" ToRole="Pagamentos" />
+    <NavigationProperty Name="Caixa" Relationship="db_estacaoModel.FK__Caixa__idFuncion__75F77EB0" FromRole="Funcionarios" ToRole="Caixa" />
+  </EntityType>
+  <Association Name="FK__FuncGroup__idFun__498EEC8D">
+    <End Type="db_estacaoModel.Funcionarios" Role="Funcionarios" Multiplicity="1" />
+    <End Type="db_estacaoModel.FuncGroup" Role="FuncGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="FuncGroup">
+        <PropertyRef Name="idFuncionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Sistema">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="localizacao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NIF" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="logotipo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="num_promocao" Type="Int32" />
+    <Property Name="data_criacao" Type="DateTime" Precision="3" />
+    <Property Name="data_modificacao" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Atendimento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idPagamento" Type="Int32" Nullable="false" />
+    <Property Name="idSubServico" Type="Int32" Nullable="false" />
+    <Property Name="idGrupo" Type="Int32" Nullable="false" />
+    <Property Name="marca" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="matricula" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tipoPagamento" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="valor" Type="Decimal" Precision="11" Scale="2" />
+    <NavigationProperty Name="Grupos" Relationship="db_estacaoModel.FK__Atendimen__idGru__7073AF84" FromRole="Atendimento" ToRole="Grupos" />
+    <NavigationProperty Name="Pagamentos" Relationship="db_estacaoModel.FK__Atendimen__idPag__6F7F8B4B" FromRole="Atendimento" ToRole="Pagamentos" />
+    <NavigationProperty Name="SubServicos" Relationship="db_estacaoModel.FK__Atendimen__idSub__6E8B6712" FromRole="Atendimento" ToRole="SubServicos" />
+  </EntityType>
+  <EntityType Name="Pagamentos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="horaEntrada" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="dataEntrada" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="montante" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="multicaixa" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="total" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Atendimento" Relationship="db_estacaoModel.FK__Atendimen__idPag__6F7F8B4B" FromRole="Pagamentos" ToRole="Atendimento" />
+    <NavigationProperty Name="Funcionarios" Relationship="db_estacaoModel.FK__Pagamento__idFun__14B10FFA" FromRole="Pagamentos" ToRole="Funcionarios" />
+  </EntityType>
+  <Association Name="FK__Atendimen__idGru__7073AF84">
+    <End Type="db_estacaoModel.Grupos" Role="Grupos" Multiplicity="1" />
+    <End Type="db_estacaoModel.Atendimento" Role="Atendimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grupos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Atendimento">
+        <PropertyRef Name="idGrupo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Atendimen__idPag__6F7F8B4B">
+    <End Type="db_estacaoModel.Pagamentos" Role="Pagamentos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="db_estacaoModel.Atendimento" Role="Atendimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pagamentos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Atendimento">
+        <PropertyRef Name="idPagamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Atendimen__idSub__6E8B6712">
+    <End Type="db_estacaoModel.SubServicos" Role="SubServicos" Multiplicity="1" />
+    <End Type="db_estacaoModel.Atendimento" Role="Atendimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubServicos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Atendimento">
+        <PropertyRef Name="idSubServico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pagamento__idFun__14B10FFA">
+    <End Type="db_estacaoModel.Funcionarios" Role="Funcionarios" Multiplicity="1" />
+    <End Type="db_estacaoModel.Pagamentos" Role="Pagamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Pagamentos">
+        <PropertyRef Name="idFuncionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vwAtendimentos">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="serviço" />
+      <PropertyRef Name="modelo" />
+      <PropertyRef Name="grupo" />
+      <PropertyRef Name="matricula" />
+      <PropertyRef Name="pagamento" />
+      <PropertyRef Name="hora" />
+      <PropertyRef Name="data" />
+      <PropertyRef Name="estado" />
+      <PropertyRef Name="funcionário" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="cliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="serviço" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="modelo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="grupo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="marca" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="matricula" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pagamento" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="valor" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="data" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="funcionário" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Caixa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="totalMontante" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="totalMulticaixa" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="dataE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Funcionarios" Relationship="db_estacaoModel.FK__Caixa__idFuncion__75F77EB0" FromRole="Caixa" ToRole="Funcionarios" />
+  </EntityType>
+  <Association Name="FK__Caixa__idFuncion__75F77EB0">
+    <End Type="db_estacaoModel.Funcionarios" Role="Funcionarios" Multiplicity="1" />
+    <End Type="db_estacaoModel.Caixa" Role="Caixa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Caixa">
+        <PropertyRef Name="idFuncionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vwCaixa">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="referência" />
+      <PropertyRef Name="data" />
+      <PropertyRef Name="funcionário" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="montante" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="multicaixa" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="total" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="referência" Type="String" Nullable="false" MaxLength="52" FixedLength="false" Unicode="false" />
+    <Property Name="data" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="funcionário" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Promocoes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="matricula" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="contagem" Type="Int32" />
+    <Property Name="total" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NIF" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sexo" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="contacto" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dataN" Type="DateTime" Precision="0" />
+    <Property Name="data_criacao" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Empresas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NIF" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="localizacao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="contacto" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="banco" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="num_conta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IBAN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="data_criacao" Type="DateTime" Precision="3" />
+    <Property Name="data_modificacao" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="FaturasEmpresa" Relationship="db_estacaoModel.FK__FaturasEm__idEmp__07E124C1" FromRole="Empresas" ToRole="FaturasEmpresa" />
+  </EntityType>
+  <EntityType Name="FaturasEmpresa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idEmpresa" Type="Int32" Nullable="false" />
+    <Property Name="numEncomenda" Type="Int32" />
+    <Property Name="tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="kilos" Type="Int32" />
+    <Property Name="precoKilo" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="Total" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="data_criacao" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Empresas" Relationship="db_estacaoModel.FK__FaturasEm__idEmp__07E124C1" FromRole="FaturasEmpresa" ToRole="Empresas" />
+  </EntityType>
+  <Association Name="FK__FaturasEm__idEmp__07E124C1">
+    <End Type="db_estacaoModel.Empresas" Role="Empresas" Multiplicity="1" />
+    <End Type="db_estacaoModel.FaturasEmpresa" Role="FaturasEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="FaturasEmpresa">
+        <PropertyRef Name="idEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="vwFacturasEmpresas">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="idEmpresa" />
+      <PropertyRef Name="nome" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="idEmpresa" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="numEncomenda" Type="Int32" />
+    <Property Name="tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="kilos" Type="Int32" />
+    <Property Name="precoKilo" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="Total" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="data_criacao" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

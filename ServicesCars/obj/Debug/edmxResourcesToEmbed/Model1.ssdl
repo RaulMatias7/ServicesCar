@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_estacaoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Atendimento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idCliente" Type="int" />
+    <Property Name="idSubServico" Type="int" Nullable="false" />
+    <Property Name="idGrupo" Type="int" />
+    <Property Name="marca" Type="varchar" MaxLength="50" />
+    <Property Name="matricula" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="horaEntrada" Type="time" Precision="7" Nullable="false" />
+    <Property Name="dataEntrada" Type="date" Nullable="false" />
+    <Property Name="tipoPagamento" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="valor" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="idFuncionario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Caixa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="totalCash" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="totalMulticaixa" Type="decimal" Precision="11" Scale="2" />
+    <Property Name="dateE" Type="date" Nullable="false" />
+    <Property Name="idFuncionario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NIF" Type="varchar" MaxLength="100" />
+    <Property Name="sexo" Type="varchar" MaxLength="1" />
+    <Property Name="contacto" Type="varchar" MaxLength="25" />
+    <Property Name="dataN" Type="date" />
+  </EntityType>
+  <EntityType Name="Empresas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NIF" Type="varchar" MaxLength="100" />
+    <Property Name="localizacao" Type="varchar" MaxLength="100" />
+    <Property Name="descricao" Type="text" />
+    <Property Name="dateCriacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FaturasEmpresa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEmpresa" Type="int" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="100" />
+    <Property Name="quantidade" Type="int" />
+    <Property Name="preco" Type="decimal" Precision="11" Scale="2" />
+  </EntityType>
+  <EntityType Name="FuncGroup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idFuncionario" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Funcionarios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="25" />
+    <Property Name="dataN" Type="date" />
+    <Property Name="sexo" Type="varchar" MaxLength="1" />
+    <Property Name="senha" Type="varchar" MaxLength="20" />
+    <Property Name="dateCriacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Grupos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="grupo" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Promocoes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="matricula" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="contagem" Type="int" />
+  </EntityType>
+  <EntityType Name="Servicos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubServicos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idServico" Type="int" Nullable="false" />
+    <Property Name="tipo" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="preco" Type="decimal" Precision="11" Scale="2" />
+  </EntityType>
+  <Association Name="FK__Atendimen__idFun__2E1BDC42">
+    <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
+    <End Role="Atendimento" Type="Self.Atendimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Atendimento">
+        <PropertyRef Name="idFuncionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Atendimen__idSub__2F10007B">
+    <End Role="SubServicos" Type="Self.SubServicos" Multiplicity="1" />
+    <End Role="Atendimento" Type="Self.Atendimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubServicos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Atendimento">
+        <PropertyRef Name="idSubServico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Caixa__idFuncion__34C8D9D1">
+    <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
+    <End Role="Caixa" Type="Self.Caixa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Caixa">
+        <PropertyRef Name="idFuncionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FaturasEm__idEmp__3F466844">
+    <End Role="Empresas" Type="Self.Empresas" Multiplicity="1" />
+    <End Role="FaturasEmpresa" Type="Self.FaturasEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="FaturasEmpresa">
+        <PropertyRef Name="idEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FuncGroup__idFun__22AA2996">
+    <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
+    <End Role="FuncGroup" Type="Self.FuncGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="FuncGroup">
+        <PropertyRef Name="idFuncionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SubServic__preco__15502E78">
+    <End Role="Servicos" Type="Self.Servicos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SubServicos" Type="Self.SubServicos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SubServicos">
+        <PropertyRef Name="idServico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db_estacaoModelStoreContainer">
+    <EntitySet Name="Atendimento" EntityType="Self.Atendimento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Caixa" EntityType="Self.Caixa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Empresas" EntityType="Self.Empresas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaturasEmpresa" EntityType="Self.FaturasEmpresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FuncGroup" EntityType="Self.FuncGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Funcionarios" EntityType="Self.Funcionarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Grupos" EntityType="Self.Grupos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Promocoes" EntityType="Self.Promocoes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Servicos" EntityType="Self.Servicos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubServicos" EntityType="Self.SubServicos" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Atendimen__idFun__2E1BDC42" Association="Self.FK__Atendimen__idFun__2E1BDC42">
+      <End Role="Funcionarios" EntitySet="Funcionarios" />
+      <End Role="Atendimento" EntitySet="Atendimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Atendimen__idSub__2F10007B" Association="Self.FK__Atendimen__idSub__2F10007B">
+      <End Role="SubServicos" EntitySet="SubServicos" />
+      <End Role="Atendimento" EntitySet="Atendimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Caixa__idFuncion__34C8D9D1" Association="Self.FK__Caixa__idFuncion__34C8D9D1">
+      <End Role="Funcionarios" EntitySet="Funcionarios" />
+      <End Role="Caixa" EntitySet="Caixa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FaturasEm__idEmp__3F466844" Association="Self.FK__FaturasEm__idEmp__3F466844">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="FaturasEmpresa" EntitySet="FaturasEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FuncGroup__idFun__22AA2996" Association="Self.FK__FuncGroup__idFun__22AA2996">
+      <End Role="Funcionarios" EntitySet="Funcionarios" />
+      <End Role="FuncGroup" EntitySet="FuncGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SubServic__preco__15502E78" Association="Self.FK__SubServic__preco__15502E78">
+      <End Role="Servicos" EntitySet="Servicos" />
+      <End Role="SubServicos" EntitySet="SubServicos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

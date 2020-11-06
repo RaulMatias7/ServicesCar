@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_estacaoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Atendimento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idCliente" Type="Int32" />
+    <Property Name="idSubServico" Type="Int32" Nullable="false" />
+    <Property Name="idGrupo" Type="Int32" />
+    <Property Name="marca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="matricula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="horaEntrada" Type="Time" Nullable="false" Precision="7" />
+    <Property Name="dataEntrada" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="tipoPagamento" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="valor" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Funcionarios" Relationship="Self.FK__Atendimen__idFun__2E1BDC42" FromRole="Atendimento" ToRole="Funcionarios" />
+    <NavigationProperty Name="SubServicos" Relationship="Self.FK__Atendimen__idSub__2F10007B" FromRole="Atendimento" ToRole="SubServicos" />
+  </EntityType>
+  <EntityType Name="Caixa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="totalCash" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="totalMulticaixa" Type="Decimal" Precision="11" Scale="2" />
+    <Property Name="dateE" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Funcionarios" Relationship="Self.FK__Caixa__idFuncion__34C8D9D1" FromRole="Caixa" ToRole="Funcionarios" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NIF" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="contacto" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="dataN" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Empresas">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NIF" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="localizacao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="descricao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="dateCriacao" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="FaturasEmpresa" Relationship="Self.FK__FaturasEm__idEmp__3F466844" FromRole="Empresas" ToRole="FaturasEmpresa" />
+  </EntityType>
+  <EntityType Name="FaturasEmpresa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idEmpresa" Type="Int32" Nullable="false" />
+    <Property Name="tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="quantidade" Type="Int32" />
+    <Property Name="preco" Type="Decimal" Precision="11" Scale="2" />
+    <NavigationProperty Name="Empresas" Relationship="Self.FK__FaturasEm__idEmp__3F466844" FromRole="FaturasEmpresa" ToRole="Empresas" />
+  </EntityType>
+  <EntityType Name="FuncGroup">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idFuncionario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Funcionarios" Relationship="Self.FK__FuncGroup__idFun__22AA2996" FromRole="FuncGroup" ToRole="Funcionarios" />
+  </EntityType>
+  <EntityType Name="Funcionarios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="dataN" Type="DateTime" Precision="0" />
+    <Property Name="sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="senha" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dateCriacao" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Atendimento" Relationship="Self.FK__Atendimen__idFun__2E1BDC42" FromRole="Funcionarios" ToRole="Atendimento" />
+    <NavigationProperty Name="Caixa" Relationship="Self.FK__Caixa__idFuncion__34C8D9D1" FromRole="Funcionarios" ToRole="Caixa" />
+    <NavigationProperty Name="FuncGroup" Relationship="Self.FK__FuncGroup__idFun__22AA2996" FromRole="Funcionarios" ToRole="FuncGroup" />
+  </EntityType>
+  <EntityType Name="Grupos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="grupo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Promocoes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="matricula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="contagem" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Servicos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="SubServicos" Relationship="Self.FK__SubServic__preco__15502E78" FromRole="Servicos" ToRole="SubServicos" />
+  </EntityType>
+  <EntityType Name="SubServicos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idServico" Type="Int32" Nullable="false" />
+    <Property Name="tipo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="preco" Type="Decimal" Precision="11" Scale="2" />
+    <NavigationProperty Name="Atendimento" Relationship="Self.FK__Atendimen__idSub__2F10007B" FromRole="SubServicos" ToRole="Atendimento" />
+    <NavigationProperty Name="Servicos" Relationship="Self.FK__SubServic__preco__15502E78" FromRole="SubServicos" ToRole="Servicos" />
+  </EntityType>
+  <Association Name="FK__Atendimen__idFun__2E1BDC42">
+    <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
+    <End Role="Atendimento" Type="Self.Atendimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Atendimento">
+        <PropertyRef Name="idFuncionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Atendimen__idSub__2F10007B">
+    <End Role="SubServicos" Type="Self.SubServicos" Multiplicity="1" />
+    <End Role="Atendimento" Type="Self.Atendimento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubServicos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Atendimento">
+        <PropertyRef Name="idSubServico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Caixa__idFuncion__34C8D9D1">
+    <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
+    <End Role="Caixa" Type="Self.Caixa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Caixa">
+        <PropertyRef Name="idFuncionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FaturasEm__idEmp__3F466844">
+    <End Role="Empresas" Type="Self.Empresas" Multiplicity="1" />
+    <End Role="FaturasEmpresa" Type="Self.FaturasEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="FaturasEmpresa">
+        <PropertyRef Name="idEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FuncGroup__idFun__22AA2996">
+    <End Role="Funcionarios" Type="Self.Funcionarios" Multiplicity="1" />
+    <End Role="FuncGroup" Type="Self.FuncGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionarios">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="FuncGroup">
+        <PropertyRef Name="idFuncionario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SubServic__preco__15502E78">
+    <End Role="Servicos" Type="Self.Servicos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SubServicos" Type="Self.SubServicos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicos">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SubServicos">
+        <PropertyRef Name="idServico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db_estacaoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Atendimento" EntityType="Self.Atendimento" />
+    <EntitySet Name="Caixa" EntityType="Self.Caixa" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+    <EntitySet Name="Empresas" EntityType="Self.Empresas" />
+    <EntitySet Name="FaturasEmpresa" EntityType="Self.FaturasEmpresa" />
+    <EntitySet Name="FuncGroup" EntityType="Self.FuncGroup" />
+    <EntitySet Name="Funcionarios" EntityType="Self.Funcionarios" />
+    <EntitySet Name="Grupos" EntityType="Self.Grupos" />
+    <EntitySet Name="Promocoes" EntityType="Self.Promocoes" />
+    <EntitySet Name="Servicos" EntityType="Self.Servicos" />
+    <EntitySet Name="SubServicos" EntityType="Self.SubServicos" />
+    <AssociationSet Name="FK__Atendimen__idFun__2E1BDC42" Association="Self.FK__Atendimen__idFun__2E1BDC42">
+      <End Role="Funcionarios" EntitySet="Funcionarios" />
+      <End Role="Atendimento" EntitySet="Atendimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Atendimen__idSub__2F10007B" Association="Self.FK__Atendimen__idSub__2F10007B">
+      <End Role="SubServicos" EntitySet="SubServicos" />
+      <End Role="Atendimento" EntitySet="Atendimento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Caixa__idFuncion__34C8D9D1" Association="Self.FK__Caixa__idFuncion__34C8D9D1">
+      <End Role="Funcionarios" EntitySet="Funcionarios" />
+      <End Role="Caixa" EntitySet="Caixa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FaturasEm__idEmp__3F466844" Association="Self.FK__FaturasEm__idEmp__3F466844">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="FaturasEmpresa" EntitySet="FaturasEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FuncGroup__idFun__22AA2996" Association="Self.FK__FuncGroup__idFun__22AA2996">
+      <End Role="Funcionarios" EntitySet="Funcionarios" />
+      <End Role="FuncGroup" EntitySet="FuncGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SubServic__preco__15502E78" Association="Self.FK__SubServic__preco__15502E78">
+      <End Role="Servicos" EntitySet="Servicos" />
+      <End Role="SubServicos" EntitySet="SubServicos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

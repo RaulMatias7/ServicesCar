@@ -1,0 +1,110 @@
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.Form1.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmAddAtendimento.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmAddFuncionario.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmAtendimentos.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmContinuar.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmFuncionarios.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmGrupos.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmHome.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmIncluirGrupo.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmInfoCaixa.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmMenuPrincipal.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmServicos.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmServicosAll.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmWait.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmElementosGrupo.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmAlertPromocao.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmCaixa.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmPromocoes.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmAddClientes.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmClientes.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.FrmAddEmpresa.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.FrmCoorporacao.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmCriarFatura.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.Formteste.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.frmFacturas.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.FrmListaFaturas.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.FrmOpacity.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.FrmLogin.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.FrmSplash.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.Properties.Resources.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.Teste.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.csproj.GenerateResource.cache
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\ServicesCars.exe.config
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\ServicesCars.exe
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\ServicesCars.pdb
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\dsConfigure.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\EntityFramework.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\dsConfigure.pdb
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\EntityFramework.xml
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.csproj.CopyComplete
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.exe
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.pdb
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.csprojAssemblyReference.cache
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.csprojResolveAssemblyReference.cache
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\ServicesCars.Form3.resources
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\RdlCompile.cache
+C:\Users\derci\OneDrive\Documents\Visual Studio 2019\Project\ServicesCars\ServicesCars\obj\Debug\RdlCompile.compiled
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\bin\Debug\ServicesCars.exe.config
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\bin\Debug\ServicesCars.exe
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\bin\Debug\ServicesCars.pdb
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\bin\Debug\EntityFramework.dll
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\bin\Debug\EntityFramework.xml
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.Form1.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.Form3.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmAddAtendimento.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmAddFuncionario.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmAtendimentos.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmContinuar.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmFuncionarios.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmGrupos.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmHome.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmIncluirGrupo.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmInfoCaixa.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmMenuPrincipal.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmServicos.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmServicosAll.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmWait.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmElementosGrupo.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmAlertPromocao.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmCaixa.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmPromocoes.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmAddClientes.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmClientes.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.FrmAddEmpresa.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.FrmCoorporacao.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.frmCriarFatura.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.Formteste.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.FrmFacturas.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.FrmListaFaturas.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.FrmOpacity.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.FrmLogin.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.FrmSplash.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.Properties.Resources.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.Teste.resources
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.csproj.GenerateResource.Cache
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.exe
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.pdb
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\ServicesCars.csprojResolveAssemblyReference.cache
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\RdlCompile.cache
+C:\Users\Raúl Matias\Documents\Negócios\Estação de Serviços\ServicesCars(FAT)\ServicesCars\obj\Debug\RdlCompile.compiled

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_estacaoModelStoreContainer" CdmEntityContainer="db_estacaoEntities">
+    <EntitySetMapping Name="Atendimento">
+      <EntityTypeMapping TypeName="db_estacaoModel.Atendimento">
+        <MappingFragment StoreEntitySet="Atendimento">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idSubServico" ColumnName="idSubServico" />
+          <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+          <ScalarProperty Name="matricula" ColumnName="matricula" />
+          <ScalarProperty Name="horaEntrada" ColumnName="horaEntrada" />
+          <ScalarProperty Name="dataEntrada" ColumnName="dataEntrada" />
+          <ScalarProperty Name="tipoPagamento" ColumnName="tipoPagamento" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Caixa">
+      <EntityTypeMapping TypeName="db_estacaoModel.Caixa">
+        <MappingFragment StoreEntitySet="Caixa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="totalCash" ColumnName="totalCash" />
+          <ScalarProperty Name="totalMulticaixa" ColumnName="totalMulticaixa" />
+          <ScalarProperty Name="dateE" ColumnName="dateE" />
+          <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="db_estacaoModel.Clientes">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="NIF" ColumnName="NIF" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="contacto" ColumnName="contacto" />
+          <ScalarProperty Name="dataN" ColumnName="dataN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresas">
+      <EntityTypeMapping TypeName="db_estacaoModel.Empresas">
+        <MappingFragment StoreEntitySet="Empresas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="NIF" ColumnName="NIF" />
+          <ScalarProperty Name="localizacao" ColumnName="localizacao" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="dateCriacao" ColumnName="dateCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FaturasEmpresa">
+      <EntityTypeMapping TypeName="db_estacaoModel.FaturasEmpresa">
+        <MappingFragment StoreEntitySet="FaturasEmpresa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+          <ScalarProperty Name="preco" ColumnName="preco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuncGroup">
+      <EntityTypeMapping TypeName="db_estacaoModel.FuncGroup">
+        <MappingFragment StoreEntitySet="FuncGroup">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Funcionarios">
+      <EntityTypeMapping TypeName="db_estacaoModel.Funcionarios">
+        <MappingFragment StoreEntitySet="Funcionarios">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="dataN" ColumnName="dataN" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="dateCriacao" ColumnName="dateCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grupos">
+      <EntityTypeMapping TypeName="db_estacaoModel.Grupos">
+        <MappingFragment StoreEntitySet="Grupos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="grupo" ColumnName="grupo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Promocoes">
+      <EntityTypeMapping TypeName="db_estacaoModel.Promocoes">
+        <MappingFragment StoreEntitySet="Promocoes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="matricula" ColumnName="matricula" />
+          <ScalarProperty Name="contagem" ColumnName="contagem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicos">
+      <EntityTypeMapping TypeName="db_estacaoModel.Servicos">
+        <MappingFragment StoreEntitySet="Servicos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubServicos">
+      <EntityTypeMapping TypeName="db_estacaoModel.SubServicos">
+        <MappingFragment StoreEntitySet="SubServicos">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idServico" ColumnName="idServico" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="preco" ColumnName="preco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
